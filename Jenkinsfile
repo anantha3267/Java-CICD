@@ -107,7 +107,7 @@ pipeline {
         publishHTML(target: [
             reportName: 'Cyclomatic Complexity',
             reportDir: '.',
-            reportFiles: 'lizard-report.xml'
+            reportFiles: 'lizard-report.html'
         ])
 
         // Publish the JaCoCo HTML report in Jenkins
