@@ -15,7 +15,7 @@ pipeline {
         // Git Checkout
         stage('Git Checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: true, url: 'https://github.com/anantha3267/new.git'
+                git branch: 'master', changelog: false, poll: true, url: 'https://github.com/anantha3267/new.git'
             }
         }
         stage('Build') {
