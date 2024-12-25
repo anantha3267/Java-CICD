@@ -119,6 +119,25 @@ pipeline {
             ]
         )
     }
+
+        success {
+            mail to: 'ananthamchiranjeevi@gmail.com',
+                 subject: "Build Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: """Build was successful:
+
+                 Job: ${env.JOB_NAME}
+                 Build Number: ${env.BUILD_NUMBER}
+                 Build URL: ${env.BUILD_URL}"""
+        }
+        failure {
+            mail to: 'ananthamchiranjeevi@gmail.com',
+                 subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: """Build failed:
+
+                 Job: ${env.JOB_NAME}
+                 Build Number: ${env.BUILD_NUMBER}
+                 Build URL: ${env.BUILD_URL}"""
+        }
 }
 
 }
