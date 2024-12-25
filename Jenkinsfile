@@ -7,6 +7,12 @@ pipeline {
 
     stages {
 
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()  // Clean the workspace before starting the build
+            }
+        }
+
         // Git Checkout
         stage('Git Checkout') {
             steps {
