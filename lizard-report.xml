@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/terryyin/lizard/master/lizard.xsl"?>
+<cppncss>
+	<measure type="Function">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+		</labels>
+		<item name="App::main(...) at src/main/java/com/example/App.java:9">
+			<value>1</value>
+			<value>4</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="4.0"/>
+		<average label="CCN" value="1.0"/>
+		<item name="AppTest::testMain(...) at src/test/java/com/example/AppTest.java:16">
+			<value>2</value>
+			<value>6</value>
+			<value>1</value>
+		</item>
+		<item name="AppTest::AppTest(...) at src/test/java/com/example/AppTest.java:29">
+			<value>3</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="AppTest::suite(...) at src/test/java/com/example/AppTest.java:33">
+			<value>4</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<item name="AppTest::testApp(...) at src/test/java/com/example/AppTest.java:37">
+			<value>5</value>
+			<value>3</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="3.8"/>
+		<average label="CCN" value="1.0"/>
+	</measure>
+	<measure type="File">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+			<label>Functions</label>
+		</labels>
+		<item name="src/main/java/com/example/App.java">
+			<value>1</value>
+			<value>8</value>
+			<value>1</value>
+			<value>1</value>
+		</item>
+		<item name="src/test/java/com/example/AppTest.java">
+			<value>2</value>
+			<value>23</value>
+			<value>4</value>
+			<value>4</value>
+		</item>
+		<average label="NCSS" value="15.5"/>
+		<average label="CCN" value="2.5"/>
+		<average label="Functions" value="2.5"/>
+		<sum label="NCSS" value="31"/>
+		<sum label="CCN" value="5"/>
+		<sum label="Functions" value="5"/>
+		<average label="NCSS" value="3.8"/>
+		<average label="CCN" value="1.0"/>
+	</measure>
+</cppncss>
+

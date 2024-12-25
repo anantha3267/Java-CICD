@@ -69,20 +69,10 @@ pipeline {
         //         }
         //     }
         // }
-
-//         stage('Check Directory Structure') {
-//             steps {
-//                 script {
-//                     // Print the directory structure to verify correct path
-//                     sh 'ls -R src'
-//                 }
-//             }
-//         }
-
         stage('Cyclomatic Complexity') {
     steps {
         // Run Lizard and generate the report
-        sh 'lizard src/**/*.java  --xml > lizard-report.xml'
+        sh 'lizard src/main/java/com/example/*.java src/test/java/com/example/*.java --xml > lizard-report.xml'
     }
 }
 
