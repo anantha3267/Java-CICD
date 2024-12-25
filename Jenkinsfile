@@ -73,19 +73,19 @@ pipeline {
 //             }
 //         }
 
-//         stage('Cyclomatic Complexity') {
-//     steps {
-//         // Run Lizard and generate the report
-//         sh 'lizard src/**/*.java  --xml > complexity-report.xml'
+        stage('Cyclomatic Complexity') {
+    steps {
+        // Run Lizard and generate the report
+        sh 'lizard src/**/*.java  --xml > complexity-report.xml'
 
-//         // Publish the report in Jenkins
-//         publishHTML(target: [
-//             reportName: 'Cyclomatic Complexity',
-//             reportDir: '.',
-//             reportFiles: 'complexity-report.xml'
-//         ])
-//     }
-// }
+        // Publish the report in Jenkins
+        // publishHTML(target: [
+        //     reportName: 'Cyclomatic Complexity',
+        //     reportDir: '.',
+        //     reportFiles: 'complexity-report.xml'
+        // ])
+    }
+}
 
         stage('OWASP') {
             steps {
@@ -114,9 +114,6 @@ pipeline {
                 keepAll: true
             ]
         )
-
-        // Publish JaCoCo code coverage in Jenkins
-        jacoco execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java'
 
         // Optionally, you can publish the JaCoCo HTML report in Jenkins
         publishHTML(
