@@ -7,11 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
-            }
-		}
         // Git Checkout
         stage('Git Checkout') {
             steps {
@@ -92,13 +87,13 @@ pipeline {
 //     }
 // }
 
-        // stage('OWASP') {
-        //     steps {
-        //         dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'Dependency check',
-        //          stopBuild: true // Stop on any critical vulnerabilities
+        stage('OWASP') {
+            steps {
+                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'Dependency check',
+                 stopBuild: true // Stop on any critical vulnerabilities
                  
-        //     }     
-        // }
+            }     
+        }
 //         // JaCoCo Code Coverage Report
 //         stage('JaCoCo Report') {
 //             steps {
