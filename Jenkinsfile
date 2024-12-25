@@ -116,7 +116,7 @@ pipeline {
         )
 
         // Publish JaCoCo code coverage in Jenkins
-        //jacoco execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java'
+        jacoco execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java'
 
         // Optionally, you can publish the JaCoCo HTML report in Jenkins
         publishHTML(
