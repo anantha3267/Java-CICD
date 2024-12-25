@@ -72,7 +72,7 @@ pipeline {
         stage('Cyclomatic Complexity') {
     steps {
         // Run Lizard and generate the report
-        sh 'lizard src/main/java/com/example/*.java src/test/java/com/example/*.java --xml > lizard-report.html'
+        sh 'lizard src/main/java/com/example/*.java src/test/java/com/example/*.java --html > lizard-report.html'
     }
 }
 
