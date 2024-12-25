@@ -101,7 +101,7 @@ pipeline {
                 sh "mvn clean test jacoco:report"
             }
         }
-    }
+    
 //     post {
 //         always {
 //             // Publish JaCoCo code coverage in Jenkins
