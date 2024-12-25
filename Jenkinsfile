@@ -77,13 +77,6 @@ pipeline {
     steps {
         // Run Lizard and generate the report
         sh 'lizard src/**/*.java  --xml > lizard-report.xml'
-
-        // Publish the report in Jenkins
-        // publishHTML(target: [
-        //     reportName: 'Cyclomatic Complexity',
-        //     reportDir: '.',
-        //     reportFiles: 'complexity-report.xml'
-        // ])
     }
 }
 
@@ -114,8 +107,14 @@ pipeline {
                 keepAll: true
             ]
         )
+        // Publish the Cyclomatic Complexity HTML report in Jenkins
+        publishHTML(target: [
+            reportName: 'Cyclomatic Complexity',
+            reportDir: '.',
+            reportFiles: 'lizard-report.xml'
+        ])
 
-        // Optionally, you can publish the JaCoCo HTML report in Jenkins
+        // Publish the JaCoCo HTML report in Jenkins
         publishHTML(
             target: [
                 reportName: 'JaCoCo Report',
