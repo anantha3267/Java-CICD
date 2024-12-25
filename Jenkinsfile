@@ -94,14 +94,14 @@ pipeline {
                  
             }     
         }
-//         // JaCoCo Code Coverage Report
-//         stage('JaCoCo Report') {
-//             steps {
-//                 // Run JaCoCo and generate the report
-//                 sh "mvn clean test jacoco:report"
-//             }
-//         }
-//     }
+        // JaCoCo Code Coverage Report
+        stage('JaCoCo Report') {
+            steps {
+                // Run JaCoCo and generate the report
+                sh "mvn clean test jacoco:report"
+            }
+        }
+    }
 //     post {
 //         always {
 //             // Publish JaCoCo code coverage in Jenkins
