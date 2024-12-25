@@ -73,19 +73,19 @@ pipeline {
 //             }
 //         }
 
-//         stage('Cyclomatic Complexity') {
-//     steps {
-//         // Run Lizard and generate the report
-//         sh 'lizard src/**/*.java  --xml > complexity-report.xml'
+        stage('Cyclomatic Complexity') {
+    steps {
+        // Run Lizard and generate the report
+        sh 'lizard src/**/*.java  --xml > lizard-report.xml'
 
-//         // Publish the report in Jenkins
-//         // publishHTML(target: [
-//         //     reportName: 'Cyclomatic Complexity',
-//         //     reportDir: '.',
-//         //     reportFiles: 'complexity-report.xml'
-//         // ])
-//     }
-// }
+        // Publish the report in Jenkins
+        // publishHTML(target: [
+        //     reportName: 'Cyclomatic Complexity',
+        //     reportDir: '.',
+        //     reportFiles: 'complexity-report.xml'
+        // ])
+    }
+}
 
         stage('OWASP') {
             steps {
