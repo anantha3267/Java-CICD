@@ -115,6 +115,20 @@ pipeline {
 //             ])
 //         }
     }
+
+        post {
+        always {
+            // Publish the HTML report
+            publishHTML(
+                target: [
+                    reportName: 'Dependency-Check Report',
+                    reportDir: '', // No need to specify a directory if the report is in the workspace root
+                    reportFiles: 'dependency-check-report.html', // The HTML report generated
+                    keepAll: true
+                ]
+            )
+        }
+    }
 }
 
 
