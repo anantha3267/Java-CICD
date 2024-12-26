@@ -40,35 +40,35 @@ pipeline {
             }
         }
 
-        // // SonarQube Analysis
-        // stage('Sonar analysis') {
-        //     steps {
-        //         script {
-        //             // Use the SonarQube environment
-        //             withSonarQubeEnv('SonarQube') {
-        //                 sh "mvn clean package"
-        //                 sh ''' mvn sonar:sonar \
-        //                         -Dsonar.projectName=Scoreme \
-        //                         -Dsonar.java.binaries=. \
-        //                         -Dsonar.projectKey=Scoreme '''
-        //             }
-        //         }
-        //     }
-        // }
+        // SonarQube Analysis
+        stage('Sonar analysis') {
+            steps {
+                script {
+                    // Use the SonarQube environment
+                    withSonarQubeEnv('SonarQube') {
+                        sh "mvn clean package"
+                        sh ''' mvn sonar:sonar \
+                                -Dsonar.projectName=Scoreme \
+                                -Dsonar.java.binaries=. \
+                                -Dsonar.projectKey=Scoreme '''
+                    }
+                }
+            }
+        }
 
-        // //Wait for SonarQube Quality Gate
-        // stage('Quality Gate') {
-        //     steps {
-        //         timeout(time: 1, unit: 'HOURS') {
-        //             script {
-        //                 def qg = waitForQualityGate()
-        //                 if (qg.status != 'OK') {
-        //                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        //Wait for SonarQube Quality Gate
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    script {
+                        def qg = waitForQualityGate()
+                        if (qg.status != 'OK') {
+                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        }
+                    }
+                }
+            }
+        }
         stage('Cyclomatic Complexity') {
     steps {
         // Run Lizard and generate the report
